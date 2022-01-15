@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+.h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 95%;
+}
+
+h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+}
+
+.h1, .bi, .nav-link {
+    color: rgb(113, 34, 204);
+}
+
+.hover-col:hover {
+    background-color: rgb(239, 225, 255);
+    border-radius: 15px;
+}
+
+.feature {
+    padding-top: 15px;
+}
+
+.btn-purple {
+    background-color: white;
+    border-color: white;
+    color: rgb(113, 34, 204);
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.btn-purple:hover, .btn-purple-reverse {
+    color: white;
+    background-color: rgb(113, 34, 204);
+}
+
+.btn-purple-reverse:hover {
+    color: white;
+    background-color: rgb(151, 75, 238);
+}
+
+.padding {
+    padding: 40px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.feature-icon {
+    background-color: rgb(113, 34, 204);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    fill: white;
+    border-radius: .75rem;
+}
+
+footer {
+    background-color: rgb(248, 246, 252);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+  
+footer p {
+    margin-bottom: .25rem;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.table-purple {
+    color: white;
+    background-color: rgb(113, 34, 204);
+}

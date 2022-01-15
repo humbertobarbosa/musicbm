@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Meus álbuns - musicbm</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link class="icon-link" rel="icon" type="image/x-icon" href="img/disc-fill.svg">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container-sm">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" href="index.html">
+                <div class="fs-2 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-disc-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-6 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM4 8a4 4 0 0 1 4-4 .5.5 0 0 0 0-1 5 5 0 0 0-5 5 .5.5 0 0 0 1 0zm9 0a.5.5 0 1 0-1 0 4 4 0 0 1-4 4 .5.5 0 0 0 0 1 5 5 0 0 0 5-5z"></path>
+                    </svg>
+                    <span class="h1">musicbm</span>
+                </div>
+            </a>
+            <ul class="nav">
+                <li class="nav-item"><a href="index.html" class="btn btn-purple">Home</a></li>
+                <li class="nav-item"><a href="new.html" class="btn btn-purple">Meus álbuns</a></li>
+                <li class="nav-item"><a href="#" class="btn btn-purple">Stats (em breve!)</a></li>
+            </ul>
+        </header>
+    </div>
+    <section>
+        <div class="container px-4 py-2">
+            <h2 class="pb-2 border-bottom">Adicionar álbuns</h2>
+            <div id="div-form-album">
+                <form id="form-album" class="p-5 row g-3">
+                    <div class="col-md-6">
+                        <label for="album" class="form-label">Título</label>
+                        <input type="text" class="form-control" name="album" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="artist" class="form-label">Artista</label>
+                        <input type="text" class="form-control" name="artist" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="genre" class="form-label">Gênero(s)</label>
+                        <input type="text" class="form-control" name="genre" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="num-songs" class="form-label">N° de faixas</label>
+                        <input type="number" class="form-control" name="num-songs" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="month" class="form-label">Ouvido em</label>
+                        <select class="form-select" name="month" required>
+                            <option selected disabled value="">Selecione o mês...</option>
+                            <option value="1">Janeiro</option>
+                            <option value="2">Fevereiro</option>
+                            <option value="3">Março</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Maio</option>
+                            <option value="6">Junho</option>
+                            <option value="7">Julho</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-purple-reverse" type="reset" onclick="addAlbum(album.value, artist.value)">Adicionar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container px-4 py-2">
+            <h2 class="pb-2 border-bottom">Lista de álbuns</h2>
+            <div id="div-table-album" class="p-5">
+                <table id="table-album" class="table table-purple">
+                    <thead>
+                        <tr>
+                            <td scope="col"></td>
+                            <td scope="col"><b>Título</b></td>
+                            <td scope="col"><b>Artista</b></td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer class="text-muted bg-footer text-center text-lg-start">
+        <div class="container">
+            <p>2022 &copy; musicbm | Humberto Barbosa</p>
+            <p>musicbm - seus álbuns guardados aqui!</p>
+            <a class="float-right link-secondary" href="#">Voltar ao topo</a>
+        </div>
+    </footer>
+</body>
+</html>
