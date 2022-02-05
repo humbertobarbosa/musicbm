@@ -7,10 +7,10 @@ Um sistema responsivo que realiza a listagem de todos os álbuns musicais ouvido
 - Apresentar estatísticas (álbum com mais faixas, mês em que foram escutados mais álbuns, gênero favorito, etc.) com base nos dados da tabela
 
 ## Principais screens
-- [Link](github.com/humbertobarbosa/musicbm)
+- [Link](https://github.com/humbertobarbosa/musicbm/tree/main/screens)
 
 ## Novidades das próximas atualizações
-- Correções no _footer_
+- ~~Correções no _footer_~~
 - Validação de formulários
 - Adição de novas colunas na tabela
 - Criação de uma nova tela exclusiva para a tabela bem como uma tela exclusiva para o formulário
