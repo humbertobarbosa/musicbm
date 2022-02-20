@@ -33,23 +33,23 @@
                 <form id="form-album" class="p-5 row g-3">
                     <div class="col-md-6">
                         <label for="album" class="form-label">Título</label>
-                        <input type="text" class="form-control" name="album" required>
+                        <input type="text" class="form-control" name="album" id="album">
                     </div>
                     <div class="col-md-6">
                         <label for="artist" class="form-label">Artista</label>
-                        <input type="text" class="form-control" name="artist" required>
+                        <input type="text" class="form-control" name="artist" id="artist">
                     </div>
                     <div class="col-md-6">
                         <label for="genre" class="form-label">Gênero(s)</label>
-                        <input type="text" class="form-control" name="genre" required>
+                        <input type="text" class="form-control" name="genre">
                     </div>
                     <div class="col-md-3">
                         <label for="num-songs" class="form-label">N° de faixas</label>
-                        <input type="number" class="form-control" name="num-songs" required>
+                        <input type="number" class="form-control" name="num-songs">
                     </div>
                     <div class="col-md-3">
                         <label for="month" class="form-label">Ouvido em</label>
-                        <select class="form-select" name="month" required>
+                        <select class="form-select" name="month">
                             <option selected disabled value="">Selecione o mês...</option>
                             <option value="1">Janeiro</option>
                             <option value="2">Fevereiro</option>
@@ -66,7 +66,7 @@
                         </select>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-purple-reverse" type="reset" onclick="addAlbum(album.value, artist.value)">Adicionar</button>
+                        <button class="btn btn-purple-reverse" type="button" onclick="addAlbum(album.value, artist.value)">Adicionar</button>
                     </div>
                 </form>
             </div>
