@@ -40,33 +40,33 @@
                         <input type="text" class="form-control" name="artist" id="artist">
                     </div>
                     <div class="col-md-6">
-                        <label for="genre" class="form-label">Gênero(s)</label>
-                        <input type="text" class="form-control" name="genre">
+                        <label for="genre" class="form-label">Gênero</label>
+                        <input type="text" class="form-control" name="genre" id="genre">
                     </div>
                     <div class="col-md-3">
-                        <label for="num-songs" class="form-label">N° de faixas</label>
-                        <input type="number" class="form-control" name="num-songs">
+                        <label for="numsongs" class="form-label">Faixas</label>
+                        <input type="number" class="form-control" name="numsongs" id="numsongs">
                     </div>
                     <div class="col-md-3">
                         <label for="month" class="form-label">Ouvido em</label>
-                        <select class="form-select" name="month">
+                        <select class="form-select" name="month" id="month">
                             <option selected disabled value="">Selecione o mês...</option>
-                            <option value="1">Janeiro</option>
-                            <option value="2">Fevereiro</option>
-                            <option value="3">Março</option>
-                            <option value="4">Abril</option>
-                            <option value="5">Maio</option>
-                            <option value="6">Junho</option>
-                            <option value="7">Julho</option>
-                            <option value="8">Agosto</option>
-                            <option value="9">Setembro</option>
-                            <option value="10">Outubro</option>
-                            <option value="11">Novembro</option>
-                            <option value="12">Dezembro</option>
+                            <option value="Janeiro">Janeiro</option>
+                            <option value="Fevereiro">Fevereiro</option>
+                            <option value="Março">Março</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Maio">Maio</option>
+                            <option value="Junho">Junho</option>
+                            <option value="Julho">Julho</option>
+                            <option value="Agosto">Agosto</option>
+                            <option value="Setembro">Setembro</option>
+                            <option value="Outubro">Outubro</option>
+                            <option value="Novembro">Novembro</option>
+                            <option value="Dezembro">Dezembro</option>
                         </select>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-purple-reverse" type="button" onclick="addAlbum(album.value, artist.value)">Adicionar</button>
+                        <button class="btn btn-purple-reverse" type="button" onclick="addAlbum(album.value, artist.value, genre.value, numsongs.value, month.value)">Adicionar</button>
                     </div>
                 </form>
             </div>
@@ -82,6 +82,9 @@
                             <td scope="col"></td>
                             <td scope="col"><b>Título</b></td>
                             <td scope="col"><b>Artista</b></td>
+                            <td scope="col"><b>Gênero</b></td>
+                            <td scope="col"><b>Faixas</b></td>
+                            <td scope="col"><b>Ouvido em</b></td>
                         </tr>
                     </thead>
                 </table>
