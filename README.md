@@ -13,7 +13,7 @@ Um sistema responsivo que realiza a listagem de todos os álbuns musicais ouvido
 - ~~Correções no _footer_~~
 - ~~Validação de formulários~~
 - ~~Adição de novas colunas na tabela~~
-- Verificação de álbuns repetidos
+- ~~Verificação de álbuns repetidos~~
 - Efeitos de _hover_ ao deslizar pela tabela (e outras mudanças visuais)
 - Criação de um _localhost_
 - Possibilidade de editar e remover itens da tabela
