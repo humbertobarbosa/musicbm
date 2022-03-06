@@ -1,5 +1,3 @@
-var albumList = [];
-
 function addAlbum(album, artist, genre, numSongs, month) {
     if (verifyFields(album, artist, genre, numSongs, month)) {
         if (verifySameAlbums([album, artist])) {
@@ -84,3 +82,25 @@ function compareLists(l, m) {
         return false;
     }
 }
+
+function triggerIndexCol() {
+    const colAdd = document.querySelector("#col-add");
+    const colList = document.querySelector("#col-list");
+    const colStats = document.querySelector("#col-stats");
+
+    redirectPage(colAdd, "new.html");
+    redirectPage(colList, "new.html");
+    redirectPage(colStats, "#");
+}
+
+function redirectPage(col, page) {
+    if (col) {
+        col.addEventListener("click", function() {
+            window.location.href = page;
+        });
+    }
+}
+
+var albumList = [];
+
+triggerIndexCol();
