@@ -3,9 +3,9 @@ function addAlbum(album, artist, genre, numSongs, month) {
         if (verifySameAlbums([album, artist])) {
             fieldError.innerHTML = "";
 
-            const tableAlbum = document.getElementById("table-album");
-            let numRows = tableAlbum.rows.length;
-            let row = tableAlbum.insertRow(numRows);
+            const tableContent = document.getElementById("table-content");
+            let numRows = tableContent.rows.length;
+            let row = tableContent.insertRow(numRows);
             
             let cellCode = row.insertCell(0);
             let cellAlbum = row.insertCell(1);
@@ -14,7 +14,7 @@ function addAlbum(album, artist, genre, numSongs, month) {
             let cellNumSongs = row.insertCell(4);
             let cellMonth = row.insertCell(5);
         
-            cellCode.innerHTML = numRows;
+            cellCode.innerHTML = numRows + 1;
             cellAlbum.innerHTML = album;
             cellArtist.innerHTML = artist;
             cellGenre.innerHTML = genre;

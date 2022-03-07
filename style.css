@@ -96,3 +96,7 @@ footer p {
     color: white;
     background-color: rgb(113, 34, 204);
 }
+
+tbody {
+    cursor: pointer;
+}

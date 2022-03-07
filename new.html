@@ -32,15 +32,15 @@
                 <form id="form-album" class="p-5 row g-3">
                     <div class="col-md-6">
                         <label for="album" class="form-label">Título</label>
-                        <input type="text" class="form-control" name="album" id="album">
+                        <input type="text" class="form-control" name="album" id="album" placeholder="ex: Sticker">
                     </div>
                     <div class="col-md-6">
                         <label for="artist" class="form-label">Artista</label>
-                        <input type="text" class="form-control" name="artist" id="artist">
+                        <input type="text" class="form-control" name="artist" id="artist" placeholder="ex: NCT 127">
                     </div>
                     <div class="col-md-6">
                         <label for="genre" class="form-label">Gênero</label>
-                        <input type="text" class="form-control" name="genre" id="genre">
+                        <input type="text" class="form-control" name="genre" id="genre" placeholder="ex: K-Pop">
                     </div>
                     <div class="col-md-3">
                         <label for="numsongs" class="form-label">Faixas</label>
@@ -76,17 +76,19 @@
         <div class="container px-4 py-2">
             <h2 class="pb-2 border-bottom">Lista de álbuns</h2>
             <div id="div-table-album" class="p-5">
-                <table id="table-album" class="table table-purple">
-                    <thead>
+                <table id="table-album" class="table table-hover">
+                    <thead class="table-purple">
                         <tr>
                             <td scope="col"></td>
-                            <td scope="col"><b>Título</b></td>
-                            <td scope="col"><b>Artista</b></td>
-                            <td scope="col"><b>Gênero</b></td>
-                            <td scope="col"><b>Faixas</b></td>
-                            <td scope="col"><b>Ouvido em</b></td>
+                            <td scope="col">Título</td>
+                            <td scope="col">Artista</td>
+                            <td scope="col">Gênero</td>
+                            <td scope="col">Faixas</td>
+                            <td scope="col">Ouvido em</td>
                         </tr>
                     </thead>
+                    <tbody id="table-content">
+                    </tbody>
                 </table>
             </div>
         </div>
