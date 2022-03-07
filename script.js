@@ -1,6 +1,8 @@
 function addAlbum(album, artist, genre, numSongs, month) {
     if (verifyFields(album, artist, genre, numSongs, month)) {
         if (verifySameAlbums([album, artist])) {
+            fieldError.innerHTML = "";
+
             const tableAlbum = document.getElementById("table-album");
             let numRows = tableAlbum.rows.length;
             let row = tableAlbum.insertRow(numRows);
@@ -34,15 +36,20 @@ function verifyFields(album, artist, genre, numSongs, month) {
     let verify = false;
 
     if (album == "") {
-        alert("Preencha o campo 'Título'!");
+        fieldError.innerHTML = "Erro: preencha o campo 'Título'!";
+        document.getElementById("album").focus();
     } else if (artist == "") {
-        alert("Preencha o campo 'Artista'!");
+        fieldError.innerHTML = "Erro: preencha o campo 'Artista'!";
+        document.getElementById("artist").focus();
     } else if (genre == "") {
-        alert("Preencha o campo 'Gênero'!");
+        fieldError.innerHTML = "Erro: preencha o campo 'Gênero'!";
+        document.getElementById("genre").focus();
     } else if (numSongs == "") {
-        alert("Preencha o campo 'Faixas'!");
+        fieldError.innerHTML = "Erro: preencha o campo 'Faixas'!";
+        document.getElementById("numsongs").focus();
     } else if (month == "") {
-        alert("Preencha o campo 'Ouvido em'!");
+        fieldError.innerHTML = "Erro: preencha o campo 'Ouvido em'!";
+        document.getElementById("month").focus();
     } else {
         verify = true;
     }
@@ -56,7 +63,7 @@ function verifySameAlbums(row) {
     albumList.forEach(function(a) {
         if (compareLists(a, row)) {
             verify = false;
-            alert("Ops! Este álbum já foi adicionado!");
+            fieldError.innerHTML = "Erro: este álbum já foi adicionado!";
         }
     });
 
@@ -102,5 +109,6 @@ function redirectPage(col, page) {
 }
 
 var albumList = [];
+var fieldError = document.getElementById("field-error");
 
 triggerIndexCol();

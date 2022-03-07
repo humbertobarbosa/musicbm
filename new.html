@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link class="icon-link" rel="icon" type="image/x-icon" href="img/disc-fill.svg">
-    <script src="script.js"></script>
 </head>
 <body>
     <div class="container-sm">
@@ -65,9 +64,10 @@
                             <option value="Dezembro">Dezembro</option>
                         </select>
                     </div>
-                    <div class="col-12">
+                    <div class="col-md-2">
                         <button class="btn btn-purple-reverse" type="button" onclick="addAlbum(album.value, artist.value, genre.value, numsongs.value, month.value)">Adicionar</button>
                     </div>
+                    <div id="field-error"></div>
                 </form>
             </div>
         </div>
@@ -99,4 +99,5 @@
         </div>
     </footer>
 </body>
+<script src="script.js"></script>
 </html>
