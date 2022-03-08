@@ -1,6 +1,14 @@
-function addAlbum(album, artist, genre, numSongs, month) {
-    if (verifyFields(album, artist, genre, numSongs, month)) {
-        if (verifySameAlbums([album, artist])) {
+function addAlbum() {
+    var album = {
+        title: document.getElementById("album").value,
+        artist: document.getElementById("artist").value,
+        genre: document.getElementById("genre").value,
+        numSongs: document.getElementById("numsongs").value,
+        month: document.getElementById("month").value
+    };
+
+    if (verifyFields(album)) {
+        if (verifySameAlbums([album.title, album.artist])) {
             fieldError.innerHTML = "";
 
             const tableContent = document.getElementById("table-content");
@@ -15,39 +23,35 @@ function addAlbum(album, artist, genre, numSongs, month) {
             let cellMonth = row.insertCell(5);
         
             cellCode.innerHTML = numRows + 1;
-            cellAlbum.innerHTML = album;
-            cellArtist.innerHTML = artist;
-            cellGenre.innerHTML = genre;
-            cellNumSongs.innerHTML = numSongs;
-            cellMonth.innerHTML = month;
+            cellAlbum.innerHTML = album.title;
+            cellArtist.innerHTML = album.artist;
+            cellGenre.innerHTML = album.genre;
+            cellNumSongs.innerHTML = album.numSongs;
+            cellMonth.innerHTML = album.month;
 
             console.log("Álbum adicionado!");
         }
 
-        document.getElementById("album").value = "";
-        document.getElementById("artist").value = "";
-        document.getElementById("genre").value = "";
-        document.getElementById("numsongs").value = "";
-        document.getElementById("month").value = "";
+        resetForm();
     }
 }
 
-function verifyFields(album, artist, genre, numSongs, month) {
+function verifyFields(album) {
     let verify = false;
 
-    if (album == "") {
+    if (album.title == "") {
         fieldError.innerHTML = "Erro: preencha o campo 'Título'!";
         document.getElementById("album").focus();
-    } else if (artist == "") {
+    } else if (album.artist == "") {
         fieldError.innerHTML = "Erro: preencha o campo 'Artista'!";
         document.getElementById("artist").focus();
-    } else if (genre == "") {
+    } else if (album.genre == "") {
         fieldError.innerHTML = "Erro: preencha o campo 'Gênero'!";
         document.getElementById("genre").focus();
-    } else if (numSongs == "") {
+    } else if (album.numSongs == "") {
         fieldError.innerHTML = "Erro: preencha o campo 'Faixas'!";
         document.getElementById("numsongs").focus();
-    } else if (month == "") {
+    } else if (album.month == "") {
         fieldError.innerHTML = "Erro: preencha o campo 'Ouvido em'!";
         document.getElementById("month").focus();
     } else {
@@ -88,6 +92,11 @@ function compareLists(l, m) {
     } else {
         return false;
     }
+}
+
+function resetForm() {
+    const formAlbum = document.getElementById("form-album");
+    formAlbum.reset();
 }
 
 function triggerIndexCol() {
