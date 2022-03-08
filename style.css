@@ -47,10 +47,17 @@ h2 {
     background-color: rgb(151, 75, 238);
 }
 
-#field-error {
-    color: rgb(255, 56, 56);
+#field-warning {
     padding-top: -0.375rem;
     padding-bottom: -0.375rem;
+}
+
+.field-added {
+    color: rgb(33, 160, 33);
+}
+
+.field-error {
+    color: rgb(255, 56, 56);
 }
 
 .padding {

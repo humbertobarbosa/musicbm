@@ -9,7 +9,7 @@ function addAlbum() {
 
     if (verifyFields(album)) {
         if (verifySameAlbums([album.title, album.artist])) {
-            fieldError.innerHTML = "";
+            fieldWarning.innerHTML = "";
 
             const tableContent = document.getElementById("table-content");
             let numRows = tableContent.rows.length;
@@ -29,7 +29,8 @@ function addAlbum() {
             cellNumSongs.innerHTML = album.numSongs;
             cellMonth.innerHTML = album.month;
 
-            console.log("Álbum adicionado!");
+            colorFieldWarning("green");
+            fieldWarning.innerHTML = "Álbum '" + album.title + "' adicionado!";
         }
 
         resetForm();
@@ -39,20 +40,22 @@ function addAlbum() {
 function verifyFields(album) {
     let verify = false;
 
+    colorFieldWarning("red");
+
     if (album.title == "") {
-        fieldError.innerHTML = "Erro: preencha o campo 'Título'!";
+        fieldWarning.innerHTML = "Erro: preencha o campo 'Título'!";
         document.getElementById("album").focus();
     } else if (album.artist == "") {
-        fieldError.innerHTML = "Erro: preencha o campo 'Artista'!";
+        fieldWarning.innerHTML = "Erro: preencha o campo 'Artista'!";
         document.getElementById("artist").focus();
     } else if (album.genre == "") {
-        fieldError.innerHTML = "Erro: preencha o campo 'Gênero'!";
+        fieldWarning.innerHTML = "Erro: preencha o campo 'Gênero'!";
         document.getElementById("genre").focus();
     } else if (album.numSongs == "") {
-        fieldError.innerHTML = "Erro: preencha o campo 'Faixas'!";
+        fieldWarning.innerHTML = "Erro: preencha o campo 'Faixas'!";
         document.getElementById("numsongs").focus();
     } else if (album.month == "") {
-        fieldError.innerHTML = "Erro: preencha o campo 'Ouvido em'!";
+        fieldWarning.innerHTML = "Erro: preencha o campo 'Ouvido em'!";
         document.getElementById("month").focus();
     } else {
         verify = true;
@@ -67,7 +70,8 @@ function verifySameAlbums(row) {
     albumList.forEach(function(a) {
         if (compareLists(a, row)) {
             verify = false;
-            fieldError.innerHTML = "Erro: este álbum já foi adicionado!";
+            colorFieldWarning("red");
+            fieldWarning.innerHTML = "Erro: este álbum já foi adicionado!";
         }
     });
 
@@ -91,6 +95,16 @@ function compareLists(l, m) {
         return true;
     } else {
         return false;
+    }
+}
+
+function colorFieldWarning(color) {
+    fieldWarning.classList.add("field-error", "field-added");
+
+    if (color.toLowerCase() == "red") {
+        fieldWarning.classList.remove("field-added");
+    } else if (color.toLowerCase() == "green") {
+        fieldWarning.classList.remove("field-error");
     }
 }
 
@@ -118,6 +132,6 @@ function redirectPage(col, page) {
 }
 
 var albumList = [];
-var fieldError = document.getElementById("field-error");
+var fieldWarning = document.getElementById("field-warning");
 
 triggerIndexCol();
