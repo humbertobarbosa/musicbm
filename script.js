@@ -11,9 +11,11 @@ function addAlbum() {
         if (verifySameAlbums([album.title, album.artist])) {
             fieldWarning.innerHTML = "";
 
-            const tableContent = document.getElementById("table-content");
             let numRows = tableContent.rows.length;
             let row = tableContent.insertRow(numRows);
+            row.classList.add("row-album");
+
+            showButton(document.getElementById("btn-remove"));
             
             let cellCode = row.insertCell(0);
             let cellAlbum = row.insertCell(1);
@@ -99,12 +101,14 @@ function compareLists(l, m) {
 }
 
 function colorFieldWarning(color) {
-    fieldWarning.classList.add("field-error", "field-added");
+    fieldWarning.classList.add("alert-danger", "alert-success", "alert-secondary");
 
     if (color.toLowerCase() == "red") {
-        fieldWarning.classList.remove("field-added");
+        fieldWarning.classList.remove("alert-success", "alert-secondary");
     } else if (color.toLowerCase() == "green") {
-        fieldWarning.classList.remove("field-error");
+        fieldWarning.classList.remove("alert-danger", "alert-secondary");
+    } else if (color.toLowerCase() == "gray") {
+        fieldWarning.classList.remove("alert-danger", "alert-success");
     }
 }
 
@@ -112,6 +116,54 @@ function resetForm() {
     const formAlbum = document.getElementById("form-album");
     formAlbum.reset();
 }
+
+function showButton(btn) {     
+    if (btn.classList.contains("display-none")) {
+        btn.classList.remove("display-none");
+    }
+}
+
+function hideButton(btn) {
+    if (albumList.length == 0) {
+        btn.classList.add("display-none");
+    }
+}
+
+function removeAlbum() {
+    verifyBool = true;
+
+    tableContent.addEventListener("click", function(event) {
+        if (verifyBool) {
+            let tdAlbum = event.target;
+            let trAlbum = tdAlbum.parentNode;
+
+            let deletedTitle = trAlbum.children[1].textContent;
+            let deletedArtist = trAlbum.children[2].textContent;
+
+            let counter = -1;
+
+            albumList.forEach(function(a) {
+                counter++;
+                if (compareLists(a, [deletedTitle, deletedArtist])) {
+                    albumList.splice(counter, 1);
+                    return;
+                }
+            });
+
+            trAlbum.classList.add("fade-out");
+            
+            setTimeout(function() {
+                trAlbum.remove();
+                hideButton(document.getElementById("btn-remove"));
+            }, 500);
+
+            colorFieldWarning("gray");
+            fieldWarning.innerHTML = "Álbum '" + deletedTitle + "' removido!";
+
+            verifyBool = false;
+        }
+    }); 
+}  
 
 function triggerIndexCol() {
     const colAdd = document.querySelector("#col-add");
@@ -132,6 +184,7 @@ function redirectPage(col, page) {
 }
 
 var albumList = [];
+var tableContent = document.getElementById("table-content");
 var fieldWarning = document.getElementById("field-warning");
 
 triggerIndexCol();

@@ -67,7 +67,7 @@
                     <div class="col-md-2">
                         <button class="btn btn-purple-reverse" type="button" onclick="addAlbum()">Adicionar</button>
                     </div>
-                    <div id="field-warning"></div>
+                    <div id="field-warning" class="alert" role="alert"></div>
                 </form>
             </div>
         </div>
@@ -90,6 +90,9 @@
                     <tbody id="table-content">
                     </tbody>
                 </table>
+                <div id="btn-remove" class="col-md-2 display-none">
+                    <button class="btn btn-danger" type="button" onclick="removeAlbum()">Remover</button>
+                </div>
             </div>
         </div>
     </section>
