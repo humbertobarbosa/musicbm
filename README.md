@@ -15,6 +15,7 @@ Um sistema responsivo que realiza a listagem de todos os álbuns musicais ouvido
 - ~~Adição de novas colunas na tabela~~
 - ~~Verificação de álbuns repetidos~~
 - ~~Efeitos de _hover_ ao deslizar pela tabela (e outras mudanças visuais)~~
+- Possibilidade de filtrar conteúdos da tabela
 - Criação de um _localhost_
 - Possibilidade de editar ~~e remover itens da tabela~~
 - Possibilidade de ordenar por colunas da tabela
