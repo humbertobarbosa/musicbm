@@ -8,7 +8,7 @@ function addAlbum() {
     };
 
     if (verifyFields(album)) {
-        if (verifySameAlbums([album.title, album.artist])) {
+        if (verifyDuplicateAlbums([album.title, album.artist])) {
             fieldWarning.innerHTML = "";
 
             let numRows = tableContent.rows.length;
@@ -23,6 +23,8 @@ function addAlbum() {
             let cellGenre = row.insertCell(3);
             let cellNumSongs = row.insertCell(4);
             let cellMonth = row.insertCell(5);
+
+            cellCode.classList.add("code");
         
             cellCode.innerHTML = numRows + 1;
             cellAlbum.innerHTML = album.title;
@@ -66,7 +68,7 @@ function verifyFields(album) {
     return verify;
 }
 
-function verifySameAlbums(row) {
+function verifyDuplicateAlbums(row) {
     let verify = true;
 
     albumList.forEach(function(a) {
@@ -129,6 +131,14 @@ function hideButton(btn) {
     }
 }
 
+function updateCode() {
+    let code = document.getElementsByClassName("code");
+    
+    for (let i = 0; i < code.length; i++) {
+        code[i].innerHTML = i + 1;
+    }
+}
+
 function removeAlbum() {
     verifyBool = true;
 
@@ -154,6 +164,7 @@ function removeAlbum() {
             
             setTimeout(function() {
                 trAlbum.remove();
+                updateCode();
                 hideButton(document.getElementById("btn-remove"));
             }, 500);
 
