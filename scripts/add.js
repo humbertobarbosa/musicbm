@@ -16,6 +16,7 @@ function addAlbum() {
             row.classList.add("row-album");
 
             showButton(document.getElementById("btn-remove"));
+            showButton(document.getElementById("input-filter"));
             
             let cellCode = row.insertCell(0);
             let cellAlbum = row.insertCell(1);

@@ -25,6 +25,7 @@ function removeAlbum() {
                 trAlbum.remove();
                 updateCode();
                 hideButton(document.getElementById("btn-remove"));
+                hideButton(document.getElementById("input-filter"));
             }, 500);
 
             colorFieldWarning("gray");

@@ -1,4 +1,3 @@
-
 function compareLists(l, m) {
     let counter = 0;
 

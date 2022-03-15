@@ -94,3 +94,7 @@ tbody {
     opacity: 0;
     transition: 0.5s;
 }
+
+.filter {
+    margin-bottom: 0.5rem;
+}
