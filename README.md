@@ -20,9 +20,7 @@ Um sistema responsivo que realiza a listagem de todos os álbuns musicais ouvido
 - Possibilidade de editar ~~e remover itens da tabela~~
 - Possibilidade de ordenar por colunas da tabela
 - Armazenamento do conteúdo em um banco de dados
-- Criação de uma nova tela exclusiva para a tabela bem como uma tela exclusiva para o formulário
 - Criação da tela de estatísticas
-- Sistemas de cadastro e _login_
 - _Deploy_
 
 ## Tecnologias utilizadas

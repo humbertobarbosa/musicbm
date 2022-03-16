@@ -14,16 +14,21 @@ function compareLists(l, m) {
     }
 }
 
-function colorFieldWarning(color) {
-    fieldWarning.classList.add("alert-danger", "alert-success", "alert-secondary");
+function colorFieldWarning(color, alert) {
+    alert.classList.add("alert-danger", "alert-success", "alert-secondary");
 
     if (color.toLowerCase() == "red") {
-        fieldWarning.classList.remove("alert-success", "alert-secondary");
+        alert.classList.remove("alert-success", "alert-secondary");
     } else if (color.toLowerCase() == "green") {
-        fieldWarning.classList.remove("alert-danger", "alert-secondary");
+        alert.classList.remove("alert-danger", "alert-secondary");
     } else if (color.toLowerCase() == "gray") {
-        fieldWarning.classList.remove("alert-danger", "alert-success");
+        alert.classList.remove("alert-danger", "alert-success");
     }
+}
+
+function resetFieldWarning(alert) {
+    alert.innerHTML = "";
+    alert.className = "alert";
 }
 
 function showButton(btn) {     
@@ -59,5 +64,6 @@ function redirectPage(col, page) {
 var albumList = [];
 var tableContent = document.getElementById("table-content");
 var fieldWarning = document.getElementById("field-warning");
+var fieldWarning2 = document.getElementById("field-warning-2");
 
 triggerIndexCol();

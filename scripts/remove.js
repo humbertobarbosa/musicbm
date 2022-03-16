@@ -24,12 +24,13 @@ function removeAlbum() {
             setTimeout(function() {
                 trAlbum.remove();
                 updateCode();
+
                 hideButton(document.getElementById("btn-remove"));
                 hideButton(document.getElementById("input-filter"));
+                
+                colorFieldWarning("gray", fieldWarning2);
+                fieldWarning2.innerHTML = "Álbum '" + deletedTitle + "' removido!";
             }, 500);
-
-            colorFieldWarning("gray");
-            fieldWarning.innerHTML = "Álbum '" + deletedTitle + "' removido!";
 
             verifyBool = false;
         }
