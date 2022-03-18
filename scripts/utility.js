@@ -15,14 +15,14 @@ function compareLists(l, m) {
 }
 
 function colorFieldWarning(color, alert) {
-    alert.classList.add("alert-danger", "alert-success", "alert-secondary");
-
     if (color.toLowerCase() == "red") {
-        alert.classList.remove("alert-success", "alert-secondary");
+        alert.className = "alert alert-danger";
     } else if (color.toLowerCase() == "green") {
-        alert.classList.remove("alert-danger", "alert-secondary");
+        alert.className = "alert alert-success";
     } else if (color.toLowerCase() == "gray") {
-        alert.classList.remove("alert-danger", "alert-success");
+        alert.className = "alert alert-secondary";
+    } else if (color.toLowerCase() == "blue") {
+        alert.className = "alert alert-primary";
     }
 }
 

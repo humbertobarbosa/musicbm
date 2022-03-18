@@ -8,7 +8,7 @@ function addAlbum() {
     };
 
     if (verifyFields(album)) {
-        if (verifyDuplicateAlbums([album.title, album.artist])) {
+        if (verifyDuplicateAlbums([album.title, album.artist], true)) {
             fieldWarning.innerHTML = "";
 
             let numRows = tableContent.rows.length;
@@ -35,7 +35,7 @@ function addAlbum() {
             cellMonth.innerHTML = album.month;
             cellActions.innerHTML = `
                 <li class="list-inline-item">
-                    <button class="action-edit btn-action btn btn-primary btn-sm rounded-2" type="button"><i class="action-edit fa fa-edit"></i></button>
+                    <button class="action-edit btn-action btn btn-primary btn-sm rounded-2" type="button" data-bs-toggle="modal" data-bs-target="#modal-add-album"><i class="action-edit fa fa-edit"></i></button>
                 </li>
                 <li class="list-inline-item">
                     <button class="action-remove btn-action btn btn-danger btn-sm rounded-2" type="button"><i class="action-remove fa fa-trash"></i></button>
@@ -48,6 +48,7 @@ function addAlbum() {
 
         resetForm();
         removeAlbum();
+        editAlbum();
     }
 }
 
@@ -81,7 +82,7 @@ function verifyFields(album) {
     return verify;
 }
 
-function verifyDuplicateAlbums(row) {
+function verifyDuplicateAlbums(row, push) {
     let verify = true;
 
     albumList.forEach(function(a) {
@@ -92,7 +93,7 @@ function verifyDuplicateAlbums(row) {
         }
     });
 
-    if (verify == true) {
+    if (verify == true && push == true) {
         albumList.push(row);
     }
 
@@ -105,11 +106,16 @@ function resetForm() {
 }
 
 function actionOpenForm() {
+    document.getElementsByClassName("modal-title")[0].textContent = "Adicionar álbuns";
+    document.getElementById("btn-confirm").textContent = "Adicionar";
+    document.getElementById("btn-confirm").className = "btn btn-purple-reverse";
+    document.getElementById("btn-confirm").setAttribute("onclick", "addAlbum()");
+
     let openForm = document.getElementById("open-form");
 
     openForm.addEventListener("click", function() {
         resetFieldWarning(fieldWarning);
-        resetFieldWarning(fieldWarning2)
+        resetFieldWarning(fieldWarning2);
         resetForm();
     })
 }

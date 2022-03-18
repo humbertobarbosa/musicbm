@@ -38,7 +38,7 @@ function removeAlbum() {
                 fieldWarning2.innerHTML = "Álbum '" + deletedTitle + "' removido!";
             }, 500);
         }
-    })
+    });
 }
 
 function updateCode() {
