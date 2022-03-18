@@ -5,7 +5,8 @@
     <title>Meus álbuns - musicbm</title>
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link class="icon-link" rel="icon" type="image/x-icon" href="../img/disc-fill.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -13,10 +14,8 @@
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" href="index.html">
                 <div class="fs-2 mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-disc-fill" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-6 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM4 8a4 4 0 0 1 4-4 .5.5 0 0 0 0-1 5 5 0 0 0-5 5 .5.5 0 0 0 1 0zm9 0a.5.5 0 1 0-1 0 4 4 0 0 1-4 4 .5.5 0 0 0 0 1 5 5 0 0 0 5-5z"></path>
-                    </svg>
-                    <span class="h1">musicbm</span>
+                    <i class="bi bi-disc-fill"></i>
+                    <span class="h1"><b>musicbm</b></span>
                 </div>
             </a>
             <ul class="nav">
@@ -38,15 +37,15 @@
                         <form id="form-album" class="p-5 row g-3">
                             <div class="col-md-6">
                                 <label for="album" class="form-label">Título</label>
-                                <input type="text" class="form-control" name="album" id="album" placeholder="ex: Sticker">
+                                <input type="text" class="form-control" autocomplete="off" name="album" id="album" placeholder="ex: Sticker">
                             </div>
                             <div class="col-md-6">
                                 <label for="artist" class="form-label">Artista</label>
-                                <input type="text" class="form-control" name="artist" id="artist" placeholder="ex: NCT 127">
+                                <input type="text" class="form-control" autocomplete="off" name="artist" id="artist" placeholder="ex: NCT 127">
                             </div>
                             <div class="col-md-6">
                                 <label for="genre" class="form-label">Gênero</label>
-                                <input type="text" class="form-control" name="genre" id="genre" placeholder="ex: K-Pop">
+                                <input type="text" class="form-control" autocomplete="off" name="genre" id="genre" placeholder="ex: K-Pop">
                             </div>
                             <div class="col-md-3">
                                 <label for="numsongs" class="form-label">Faixas</label>
@@ -89,7 +88,7 @@
                 <div id="input-filter" class="col-md-3 filter display-none">
                     <input type="text" id="filter" class="form-control" placeholder="Filtrar...">
                 </div>
-                <table id="table-album" class="table table-hover">
+                <table id="table-album" class="table table-bordered table-hover">
                     <thead class="table-purple">
                         <tr>
                             <td scope="col"></td>
@@ -98,13 +97,11 @@
                             <td scope="col"><b>Gênero</b></td>
                             <td scope="col"><b>Faixas</b></td>
                             <td scope="col"><b>Ouvido em</b></td>
+                            <td class="action-small" scope="col"></td>
                         </tr>
                     </thead>
                     <tbody id="table-content"></tbody>
                 </table>
-                <div id="btn-remove" class="col-md-2 display-none">
-                    <button class="btn btn-danger" type="button" onclick="removeAlbum()">Remover</button>
-                </div>
                 <div id="field-warning-2" class="alert" role="alert"></div>
             </div>
         </div>

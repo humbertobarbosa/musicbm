@@ -90,10 +90,6 @@ footer p {
     background-color: rgb(113, 34, 204);
 }
 
-tbody {
-    cursor: pointer;
-}
-
 .display-none {
     display: none;
 }
@@ -113,4 +109,23 @@ tbody {
 
 #field-warning-2 {
     margin-top: 1rem;
+}
+
+.bi-disc-fill {
+    font-size: 1.5rem;
+}
+
+.bi-file-music-fill, .bi-music-note-list, .bi-bar-chart-fill {
+    font-size: 2rem;
+    color: white;
+}
+
+.btn-action {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: .2rem;
+}
+
+.action-small {
+    width: 7rem;
 }

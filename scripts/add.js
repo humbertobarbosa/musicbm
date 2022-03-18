@@ -15,7 +15,6 @@ function addAlbum() {
             let row = tableContent.insertRow(numRows);
             row.classList.add("row-album");
 
-            showButton(document.getElementById("btn-remove"));
             showButton(document.getElementById("input-filter"));
             
             let cellCode = row.insertCell(0);
@@ -24,6 +23,7 @@ function addAlbum() {
             let cellGenre = row.insertCell(3);
             let cellNumSongs = row.insertCell(4);
             let cellMonth = row.insertCell(5);
+            let cellActions = row.insertCell(6);
 
             cellCode.classList.add("code");
         
@@ -33,12 +33,21 @@ function addAlbum() {
             cellGenre.innerHTML = album.genre;
             cellNumSongs.innerHTML = album.numSongs;
             cellMonth.innerHTML = album.month;
+            cellActions.innerHTML = `
+                <li class="list-inline-item">
+                    <button class="action-edit btn-action btn btn-primary btn-sm rounded-2" type="button"><i class="action-edit fa fa-edit"></i></button>
+                </li>
+                <li class="list-inline-item">
+                    <button class="action-remove btn-action btn btn-danger btn-sm rounded-2" type="button"><i class="action-remove fa fa-trash"></i></button>
+                </li>
+            `;
 
             colorFieldWarning("green", fieldWarning);
             fieldWarning.innerHTML = "Álbum '" + album.title + "' adicionado!";
         }
 
         resetForm();
+        removeAlbum();
     }
 }
 
@@ -101,5 +110,6 @@ function actionOpenForm() {
     openForm.addEventListener("click", function() {
         resetFieldWarning(fieldWarning);
         resetFieldWarning(fieldWarning2)
+        resetForm();
     })
 }

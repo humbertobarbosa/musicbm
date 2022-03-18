@@ -1,13 +1,20 @@
 function removeAlbum() {
-    verifyBool = true;
-
     tableContent.addEventListener("click", function(event) {
-        if (verifyBool) {
-            let tdAlbum = event.target;
-            let trAlbum = tdAlbum.parentNode;
+        if (event.target.classList.contains("action-remove")) {
+            let target = event.target;
 
-            let deletedTitle = trAlbum.children[1].textContent;
-            let deletedArtist = trAlbum.children[2].textContent;
+            if (target.classList.contains("btn")) {
+                var li = target.parentNode;
+            } else {
+                let btn = target.parentNode;
+                var li = btn.parentNode;
+            }
+
+            let tdAction = li.parentNode;
+            let rowAlbum = tdAction.parentNode;
+
+            let deletedTitle = rowAlbum.children[1].textContent;
+            let deletedArtist = rowAlbum.children[2].textContent;
 
             let counter = -1;
 
@@ -18,24 +25,21 @@ function removeAlbum() {
                     return;
                 }
             });
-
-            trAlbum.classList.add("fade-out");
+                
+            rowAlbum.classList.add("fade-out");
             
             setTimeout(function() {
-                trAlbum.remove();
+                rowAlbum.remove();
                 updateCode();
 
-                hideButton(document.getElementById("btn-remove"));
                 hideButton(document.getElementById("input-filter"));
                 
                 colorFieldWarning("gray", fieldWarning2);
                 fieldWarning2.innerHTML = "Álbum '" + deletedTitle + "' removido!";
             }, 500);
-
-            verifyBool = false;
         }
-    }); 
-}  
+    })
+}
 
 function updateCode() {
     let code = document.getElementsByClassName("code");
