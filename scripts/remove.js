@@ -10,33 +10,37 @@ function removeAlbum() {
                 var li = btn.parentNode;
             }
 
-            let tdAction = li.parentNode;
-            let rowAlbum = tdAction.parentNode;
-
-            let deletedTitle = rowAlbum.children[1].textContent;
-            let deletedArtist = rowAlbum.children[2].textContent;
-
-            let counter = -1;
-
-            albumList.forEach(function(a) {
-                counter++;
-                if (compareLists(a, [deletedTitle, deletedArtist])) {
-                    albumList.splice(counter, 1);
-                    return;
-                }
-            });
-                
-            rowAlbum.classList.add("fade-out");
+            let btnModalRemove = document.getElementById("btn-modal-remove");
             
-            setTimeout(function() {
-                rowAlbum.remove();
-                updateCode();
-
-                hideButton(document.getElementById("input-filter"));
+            btnModalRemove.addEventListener("click", function() {
+                let tdAction = li.parentNode;
+                let rowAlbum = tdAction.parentNode;
+    
+                let deletedTitle = rowAlbum.children[1].textContent;
+                let deletedArtist = rowAlbum.children[2].textContent;
+    
+                let counter = -1;
+    
+                albumList.forEach(function(a) {
+                    counter++;
+                    if (compareLists(a, [deletedTitle, deletedArtist])) {
+                        albumList.splice(counter, 1);
+                        return;
+                    }
+                });
+                    
+                rowAlbum.classList.add("fade-out");
                 
-                colorFieldWarning("gray", fieldWarning2);
-                fieldWarning2.innerHTML = "Álbum '" + deletedTitle + "' removido!";
-            }, 500);
+                setTimeout(function() {
+                    rowAlbum.remove();
+                    updateCode();
+    
+                    hideButton(document.getElementById("input-filter"));
+                    
+                    colorFieldWarning("gray", fieldWarning2);
+                    fieldWarning2.innerHTML = "Álbum '" + deletedTitle + "' removido!";
+                }, 500);
+            })
         }
     });
 }

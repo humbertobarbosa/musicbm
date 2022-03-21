@@ -38,7 +38,7 @@ function addAlbum() {
                     <button class="action-edit btn-action btn btn-primary btn-sm rounded-2" type="button" data-bs-toggle="modal" data-bs-target="#modal-add-album"><i class="action-edit fa fa-edit"></i></button>
                 </li>
                 <li class="list-inline-item">
-                    <button class="action-remove btn-action btn btn-danger btn-sm rounded-2" type="button"><i class="action-remove fa fa-trash"></i></button>
+                    <button class="action-remove btn-action btn btn-danger btn-sm rounded-2" type="button" data-bs-toggle="modal" data-bs-target="#modal-remove"><i class="action-remove fa fa-trash"></i></button>
                 </li>
             `;
 
